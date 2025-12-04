@@ -1,0 +1,21 @@
+.contact {
+  padding: 100px 0;
+
+  .container {
+    max-width: 600px;
+    margin: auto;
+    padding: 0 20px;
+    text-align: center;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      button {
+        width: 160px;
+        margin: auto;
+      }
+    }
+  }
+}
