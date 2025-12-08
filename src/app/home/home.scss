@@ -1,50 +1,60 @@
 .home-section {
-  width: 100%;
-  padding: 80px 0;
-  background: #ffffff;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .container {
-    max-width: 1200px;
-    margin: auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     gap: 40px;
-    padding: 0 20px;
-  }
-  .team-text{
-    font-size: 16px;
-    colour:#444;
-    margine-bottom:25px;
-    line-height: 1.6;
+    background: linear-gradient(135deg, #ef82ae, #de045b);
+
   }
 
   .left {
-    flex: 1;
+    flex: 2;
 
     h1 {
-      font-size: 48px;
+      font-size: 58px;
       font-weight: 700;
-      margin-bottom: 10px;
+      .highlight {
+        color: #de045b;
+      }
     }
 
     h2 {
-      font-size: 28px;
-      font-weight: 500;
-      color: #555;
-      margin-bottom: 20px;
+      font-size: 34px;
+      margin-top: 5px;
+      color: #050505;
     }
 
     p {
-      max-width: 420px;
-      font-size: 18px;
-      color: #666;
+      margin: 15px 20px;
+      font-size: 40px;
       line-height: 1.6;
-      margin-bottom: 30px;
     }
 
-    button {
-      margin-right: 12px;
+    .team-intro {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      margin-top: 10px;
+      color: #000000;
+
+      .team-name {
+        color: #99033f;
+        font-weight: 600;
+      }
+    }
+
+    .btn-group {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      margin: 20px;
+      color: #000;
+      
+     
     }
   }
 
@@ -54,20 +64,26 @@
     justify-content: center;
 
     img {
-      width: 340px;
-      border-radius: 16px;
-      box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+      width: 320px;
+      border-radius: 50%;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    img:hover {
+      transform: scale(1.05);
     }
   }
 }
 
-@media (max-width: 768px) {
+/* Mobile responsive */
+@media(max-width: 768px) {
   .home-section .container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
+  }
 
-    .right img {
-      width: 260px;
-    }
+  .btn-group {
+    justify-content: center;
   }
 }
