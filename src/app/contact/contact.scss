@@ -1,23 +1,53 @@
-.contact {
-  padding: 100px 0;
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
 
-  .container {
+  .contact-card {
+    width: 100%;
     max-width: 600px;
-    margin: auto;
-    padding: 0 20px;
-    text-align: center;
-    color: black;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 
-    form {
+    mat-card-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #00796b;
+    }
+
+    .contact-form {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 1rem;
 
-      button {
-        width: 160px;
-        margin: auto;
-        color: #3e09b8;
+      .full-width {
+        width: 100%;
+      }
+
+      .submit-btn {
+        width: 150px;
+        align-self: center;
       }
     }
+
+    .success-message {
+      margin-top: 1rem;
+      text-align: center;
+      font-weight: bold;
+      color: green;
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .contact-wrapper {
+    padding: 1rem;
   }
 }

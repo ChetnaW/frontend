@@ -1,24 +1,39 @@
-<section class="contact">
-  <div class="container">
-    <h2>Contact Me</h2>
+<div class="contact-wrapper">
+  <mat-card class="contact-card">
+    <mat-card-title>Contact Us</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="contact-form">
 
-    <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
-      <mat-form-field appearance="outline">
-        <mat-label>Name</mat-label>
-        <input matInput formControlName="name" required />
-      </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Enter your name" formControlName="name" />
+          <mat-error *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+            Name is required
+          </mat-error>
+        </mat-form-field>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="email" required />
-      </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" placeholder="Enter your email" formControlName="email" />
+          <mat-error *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+            Valid email is required
+          </mat-error>
+        </mat-form-field>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Message</mat-label>
-        <textarea matInput rows="4" formControlName="message"></textarea>
-      </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Message</mat-label>
+          <textarea matInput placeholder="Enter your message" formControlName="message" rows="5"></textarea>
+          <mat-error *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+            Message is required
+          </mat-error>
+        </mat-form-field>
 
-      <button mat-flat-button color="primary">Send Message</button>
-    </form>
-  </div>
-</section>
+        <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid || loading">
+          <span *ngIf="!loading">Send Message</span>
+          <span *ngIf="loading">Sending...</span>
+        </button>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
